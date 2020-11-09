@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      taskList: ["aquí será pintada tu tarea"],
+      taskList: [],
     };
   }
   getInputValue = (task) => {

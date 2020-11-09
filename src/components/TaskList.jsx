@@ -5,9 +5,9 @@ export default class TaskList extends Component {
     return (
       <div>
         <ul>
-          <li>
+          {/*   <li>
             <input type="checkbox" name="" id="" /> {this.props.value} <div class="delete-button">X</div>
-          </li>
+          </li> */}
         </ul>
       </div>
     );
