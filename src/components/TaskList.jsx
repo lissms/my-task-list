@@ -2,13 +2,18 @@ import React, { Component } from "react";
 
 export default class TaskList extends Component {
   render() {
+    const tasksValue = this.props.value.map((newtask) => {
+      return (
+        <li>
+          <input type="checkbox" name="" id="" />
+          {newtask} <div class="delete-button">X</div>
+        </li>
+      );
+    });
+
     return (
       <div>
-        <ul>
-          {/*   <li>
-            <input type="checkbox" name="" id="" /> {this.props.value} <div class="delete-button">X</div>
-          </li> */}
-        </ul>
+        <ul>{tasksValue}</ul>
       </div>
     );
   }

@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Form handleTaskName={this.getInputValue} />
-        <TaskList value={this.state.taskList[0]} />
+        <TaskList value={this.state.taskList} />
         <FilterButtons />
       </div>
     );
