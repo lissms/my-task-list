@@ -1,33 +1,17 @@
 import React from "react";
-import Form from "./components/Form";
-import TaskList from "./components/TaskList";
-import FilterButtons from "./components/FilterButtons";
+import { useState } from "react";
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      taskList: [],
-    };
-  }
-  getInputValue = (task) => {
-    this.setState((prevState) => {
-      const newTaskList = [...prevState.taskList, task];
-
-      return {
-        taskList: newTaskList,
-      };
-    });
+const App = () => {
+  const [age, setAge] = useState(20);
+  const handleClick = () => {
+    setAge(age + 1);
   };
-  render() {
-    return (
-      <div className="App">
-        <Form handleTaskName={this.getInputValue} />
-        <TaskList value={this.state.taskList} />
-        <FilterButtons />
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <p>Hoy tengo {age} años</p>
+      <button onClick={handleClick}>hazme más viejo</button>
+    </div>
+  );
+};
 
 export default App;
