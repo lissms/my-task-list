@@ -1,13 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class FilterButtons extends Component {
-  render() {
-    return (
-      <div>
-        <input type="button" value="All" />
-        <input type="button" value="To Do" />
-        <input type="button" value="Done" />
-      </div>
-    );
-  }
+function FilterButtons(props) {
+  return <div></div>;
 }
+
+export default FilterButtons;
