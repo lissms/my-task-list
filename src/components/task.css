@@ -1,0 +1,12 @@
+.task-container {
+  display: flex;
+  align-items: center;
+}
+.my-task {
+  margin: 5px;
+}
+.remove-task-button {
+  background-color: aquamarine;
+  border: none;
+  border-radius: 100%;
+}
