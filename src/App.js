@@ -32,4 +32,5 @@ function App() {
   );
 }
 
+/* pendiente:- me sale un error, si tendo una lista 1 2 3, y marco como realizado el 3, y elimino el dos, el tres me sale como realizado , ya q coge la posicion q tenia antes dos. Tengo que arregalrlo. */
 export default App;
