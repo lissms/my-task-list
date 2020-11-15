@@ -2,10 +2,10 @@ import React from "react";
 import Task from "./Task";
 
 function TaskList(props) {
-  const liItems = props.taskList.map((item) => {
+  const liItems = props.taskList.map((item, i) => {
     return (
-      <li>
-        <Task text={item.task} assigned={item.assigned} />
+      <li key={i}>
+        <Task text={item.task} assigned={item.assigned} id={i} removeTask={props.removeTask} />
       </li>
     );
   });

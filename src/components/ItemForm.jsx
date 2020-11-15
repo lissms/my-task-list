@@ -18,8 +18,6 @@ function ItemForm(props) {
         id={props.id}
         placeholder={props.placeholder}
         value={props.value}
-        setTask={props.setTask}
-        setAssigned={props.setAssigned}
         onChange={getInputValue}
       />
     </div>
