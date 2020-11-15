@@ -2,11 +2,18 @@ import React from "react";
 import "./task.css";
 
 function Task(props) {
+  const [isChecked, setIsChecked] = React.useState(false);
+
+  const handlerClickCheckox = (ev) => {
+    setIsChecked(ev.target.checked);
+    console.log("ev.target.che", ev.target.checked);
+  };
+
   return (
     <div className="task-container">
-      <input type="checkbox" name="checkbox" id="checkbox" />
-      <h5 className="my-task">{props.text}</h5>
-      <h5 className="my-assigned">{props.assigned}</h5>
+      <input type="checkbox" name="checkbox" id="checkbox" onClick={handlerClickCheckox} />
+      <h5 className={`my-task ${isChecked ? "underlined" : ""}`}>{props.text}</h5>
+      <h5 className={`my-assigned ${isChecked ? "underlined" : ""}`}>{props.assigned}</h5>
       <button className="remove-task-button">X</button>
     </div>
   );

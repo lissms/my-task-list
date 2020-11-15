@@ -10,3 +10,6 @@
   border: none;
   border-radius: 100%;
 }
+.underlined {
+  text-decoration: line-through;
+}
