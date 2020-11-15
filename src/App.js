@@ -6,16 +6,20 @@ import FilterButtons from "./components/FilterButtons";
 function App() {
   const [task, setTask] = React.useState("");
   const [assigned, setAssigned] = React.useState("");
-  const [taskList, settaskList] = React.useState([]);
+  const [taskListTask, settaskListTask] = React.useState([]);
+  const [taskListTaskassigned, settaskListTaskassigned] = React.useState([]);
 
   const handlerClick = () => {
-    settaskList([...taskList, task]);
+    if (task !== "") {
+      settaskListTask([...taskListTask, task]);
+      settaskListTaskassigned([...taskListTaskassigned, assigned]);
+    }
   };
   return (
     <div>
       <h1>My task manager App</h1>
       <Form handlerClick={handlerClick} assigned={assigned} task={task} setTask={setTask} setAssigned={setAssigned} />
-      <TaskList taskList={taskList} settaskList={settaskList} />
+      <TaskList task={task} taskListTask={taskListTask} taskListTaskassigned={taskListTaskassigned} />
       <FilterButtons />
     </div>
   );
