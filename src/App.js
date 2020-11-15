@@ -4,17 +4,18 @@ import TaskList from "./components/TaskList";
 import FilterButtons from "./components/FilterButtons";
 
 function App() {
-  const [task, setTask] = React.useState("task");
-  const [assigned, setAssigned] = React.useState("assigned to");
+  const [task, setTask] = React.useState("");
+  const [assigned, setAssigned] = React.useState("");
+  const [taskList, settaskList] = React.useState([]);
 
   const handlerClick = () => {
-    console.log("task, assigned", task, assigned);
+    settaskList([...taskList, task]);
   };
   return (
     <div>
       <h1>My task manager App</h1>
       <Form handlerClick={handlerClick} assigned={assigned} task={task} setTask={setTask} setAssigned={setAssigned} />
-      <TaskList />
+      <TaskList taskList={taskList} settaskList={settaskList} />
       <FilterButtons />
     </div>
   );
