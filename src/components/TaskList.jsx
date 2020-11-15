@@ -13,7 +13,7 @@ function TaskList(props) {
   return (
     <div>
       <h1>Task List</h1>
-      <ul>{liItems} </ul>
+      <ul>{liItems}</ul>
     </div>
   );
 }
