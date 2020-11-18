@@ -10,7 +10,7 @@ function App() {
 
   const handlerClick = () => {
     if (task !== "") {
-      const myTaskObjet = { task, assigned };
+      const myTaskObjet = { task, assigned, isChecked: false };
       setTaskList([...taskList, myTaskObjet]);
       setTask("");
       setAssigned("");
@@ -20,13 +20,43 @@ function App() {
   const removeTask = (id) => {
     taskList.splice(id, 1);
     setTaskList([...taskList]); // para cambiar un objeto o array
+    console.log("taskList", taskList);
+  };
+
+  const changeCkeckTask = (event) => {
+    const taskId = parseInt(event.target.id);
+
+    // solucion 1
+    //taskList[taskId].isChecked = !taskList[taskId].isChecked; // Aunque funciona, un estado nunca se debe modificar
+    //setTaskList([...taskList]);
+
+    // solucion 2 PRO
+    const updatedTaskList = taskList.map((task, index) => {
+      if (index === taskId) {
+        console.log("coincide");
+        const updatedTask = {
+          ...task,
+          isChecked: !task.isChecked,
+        };
+        return updatedTask;
+      } else {
+        return task;
+      }
+    });
+    setTaskList(updatedTaskList);
   };
 
   return (
     <div>
       <h1>My task manager App</h1>
       <Form handlerClick={handlerClick} assigned={assigned} task={task} setTask={setTask} setAssigned={setAssigned} />
-      <TaskList task={task} taskList={taskList} assigned={assigned} removeTask={removeTask} />
+      <TaskList
+        task={task}
+        taskList={taskList}
+        assigned={assigned}
+        removeTask={removeTask}
+        changeCkeckTask={changeCkeckTask}
+      />
       <FilterButtons />
     </div>
   );

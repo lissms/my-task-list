@@ -5,7 +5,14 @@ function TaskList(props) {
   const liItems = props.taskList.map((item, i) => {
     return (
       <li key={i}>
-        <Task text={item.task} assigned={item.assigned} id={i} removeTask={props.removeTask} />
+        <Task
+          text={item.task}
+          assigned={item.assigned}
+          isChecked={item.isChecked}
+          id={i}
+          removeTask={props.removeTask}
+          changeCkeckTask={props.changeCkeckTask}
+        />
       </li>
     );
   });
